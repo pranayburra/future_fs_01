@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Suspense } from 'react'
 import Navbar from './components/Navbar'
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom'
 import './App.css'
@@ -11,8 +11,8 @@ import NotFound from './components/NotFound'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Certifications from './components/Certifications'
+
 function App() {
-  const [count, setCount] = useState(0)
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<RootLayout/>}>
@@ -28,14 +28,15 @@ function App() {
   )
 
   return (
-    <div className="min-h-screen box-border  text-white m-0 p-0 relative">
+    <div className="min-h-screen box-border text-white m-0 p-0 relative">
       <div className="rgb-ball-bg">
         <div className="rgb-ball"></div>
       </div>
-      <RouterProvider router={router}/>
+      <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+        <RouterProvider router={router}/>
+      </Suspense>
     </div>
   )
 }
-
 
 export default App
