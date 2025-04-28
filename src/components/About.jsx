@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from './card'
+import Card from './Card'
 import twosidedarrow from '../assets/twosidedarrow.svg'
 import world from '../assets/world.svg'
 import medal from '../assets/medal.svg'

@@ -16,15 +16,20 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<RootLayout/>}>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/contact' element={<Contact/>}/>
-        <Route path='/Projects' element={<Projects/>}/>
-        <Route path='/Skills' element={<Skills/>}/>
-        <Route path='/Certifications' element={<Certifications/>}/>
+        <Route index element={<Home/>}/>
+        <Route path='about' element={<About/>}/>
+        <Route path='contact' element={<Contact/>}/>
+        <Route path='projects' element={<Projects/>}/>
+        <Route path='skills' element={<Skills/>}/>
+        <Route path='certifications' element={<Certifications/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Route>
-    )
+    ),
+    {
+      future: {
+        v7_relativeSplatPath: true
+      }
+    }
   )
 
   return (
