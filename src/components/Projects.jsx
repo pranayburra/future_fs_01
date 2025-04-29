@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-
+import sortingvisualizer from '../assets/sortingvisualizer.png'
+import portfolio from '../assets/portfolio.jpeg'
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
 
@@ -9,19 +10,13 @@ const Projects = () => {
       title: "Algorithm Visualizer",
       description: "Interactive visualization of sorting and searching algorithms with step-by-step execution.",
       technologies: ["React", "JavaScript", "CSS"],
-      image: "https://via.placeholder.com/300x200"
-    },
-    {
-      title: "E-Commerce Platform",
-      description: "A modern e-commerce platform with user authentication and payment integration.",
-      technologies: ["React", "Node.js", "Express", "MongoDB"],
-      image: "https://via.placeholder.com/300x200"
+      image: sortingvisualizer
     },
     {
       title: "Portfolio Website",
       description: "A modern portfolio website built with React and Tailwind CSS.",
       technologies: ["React", "Tailwind CSS", "JavaScript"],
-      image: "https://via.placeholder.com/300x200"
+      image: portfolio
     },
    
     {
@@ -55,7 +50,7 @@ const Projects = () => {
               <img 
                 src={project.image} 
                 alt={project.title} 
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-fill"
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>

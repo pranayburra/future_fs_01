@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import cert1 from '../assets/certificate.png'
 const Certifications = () => {
   const [showAll, setShowAll] = useState(false);
 
@@ -9,15 +9,9 @@ const Certifications = () => {
       issuer: "MERN Stack",
       date: "2023",
       description: "Comprehensive training in MongoDB, Express.js, React.js, and Node.js",
-      image: "https://via.placeholder.com/300x200"
+      image: cert1
     },
-    {
-      title: "Machine Learning Specialization",
-      issuer: "Stanford University",
-      date: "2023",
-      description: "Advanced machine learning algorithms and applications",
-      image: "https://via.placeholder.com/300x200"
-    },
+    
     
   ];
 

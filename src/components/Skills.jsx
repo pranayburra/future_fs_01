@@ -1,78 +1,91 @@
 import React from 'react'
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNode, FaDatabase, FaGit } from 'react-icons/fa';
+import { SiTailwindcss, SiMongodb, SiExpress } from 'react-icons/si';
 
 const Skills = () => {
-  const skillCategories = [
+  const skills = [
     {
-      title: "Programming Languages",
-      skills: [
-        { name: "Java", icon: "https://abhishekganvir.vercel.app/java.svg" },
-        { name: "JavaScript", icon: "https://abhishekganvir.vercel.app/javascript.svg" },
-        { name: "Python", icon: "https://abhishekganvir.vercel.app/python.svg" },
-        { name: "HTML/CSS", icon: "https://abhishekganvir.vercel.app/html.svg" }
-      ]
+      name: 'HTML5',
+      icon: FaHtml5,
     },
     {
-      title: "Frontend Development",
-      skills: [
-        { name: "React.js", icon: "https://abhishekganvir.vercel.app/react.svg" },
-        { name: "Tailwind CSS", icon: "https://abhishekganvir.vercel.app/tailwind.svg" },
-        { name: "Redux", icon: "https://abhishekganvir.vercel.app/redux.svg" },
-        { name: "Material-UI", icon: "https://abhishekganvir.vercel.app/materialui.svg" },
-        { name: "Responsive Design", icon: "https://abhishekganvir.vercel.app/responsive.svg" }
-      ]
+      name: 'CSS3',
+      icon: FaCss3Alt,
     },
     {
-      title: "Backend Development",
-      skills: [
-        { name: "Node.js", icon: "https://abhishekganvir.vercel.app/nodejs.svg" },
-        { name: "Express.js", icon: "https://abhishekganvir.vercel.app/express.svg" },
-        { name: "MongoDB", icon: "https://abhishekganvir.vercel.app/mongodb.svg" },
-        { name: "REST APIs", icon: "https://abhishekganvir.vercel.app/api.svg" }
-      ]
+      name: 'JavaScript',
+      icon: FaJs,
     },
     {
-      title: "Tools & Technologies",
-      skills: [
-        { name: "Git/GitHub", icon: "https://abhishekganvir.vercel.app/git.svg" },
-        { name: "VS Code", icon: "https://abhishekganvir.vercel.app/vscode.svg" },
-        { name: "Postman", icon: "https://abhishekganvir.vercel.app/postman.svg" }
-      ]
+      name: 'React',
+      icon: FaReact,
+    },
+    {
+      name: 'Node.js',
+      icon: FaNode,
+    },
+    {
+      name: 'Express',
+      icon: SiExpress,
+    },
+    {
+      name: 'MongoDB',
+      icon: SiMongodb,
+    },
+    {
+      name: 'Tailwind CSS',
+      icon: SiTailwindcss,
+    },
+    {
+      name: 'Git',
+      icon: FaGit,
+    },
+    {
+      name: 'SQL',
+      icon: FaDatabase,
     }
   ];
 
   return (
-    <div className="min-h-screen pt-20 mb-5 px-4 sm:px-8 md:px-16 lg:px-24">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 underline underline-offset-5 decoration-4 decoration-white-500">
-          Skills
-        </h1>
-        <p className="text-lg md:text-xl text-gray-300 mb-12">
-          Technical skills and expertise I've developed through my journey
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {skillCategories.map((category, index) => (
-            <div key={index} className="bg-zinc-800/50 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <h2 className="text-2xl font-bold mb-6 text-white">{category.title}</h2>
-              <div className="flex flex-wrap gap-3">
-                {category.skills.map((skill, skillIndex) => (
-                  <span 
-                    key={skillIndex}
-                    className="px-4 py-2 text-white rounded-full bg-gradient-to-r from-[#ff56f6] via-[#b936ee] to-[#3bace2] shadow-[0px_4.4px_107.2px_rgba(255,86,246,0.51)] flex items-center gap-2"
-                  >
-                    <img 
-                      src={skill.icon} 
-                      alt={skill.name} 
-                      className="w-5 h-5"
-                    />
-                    {skill.name}
-                  </span>
-                ))}
+    <div className="py-16 px-4 sm:px-6 lg:px-8">
+      <h2 className="text-4xl font-bold text-center mb-16 underline underline-offset-8 decoration-4 decoration-[#b936ee]">
+        Skills & Technologies
+      </h2>
+      
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
+        {skills.map((skill) => {
+          const Icon = skill.icon;
+          return (
+            <div
+              key={skill.name}
+              className="flex flex-col items-center gap-4 group"
+            >
+              <div className={`
+                p-8 rounded-2xl
+                bg-white/5 backdrop-blur-sm
+                border border-white/10
+                hover:cursor-pointer
+                transform transition-all duration-300
+                group-hover:scale-110
+                group-hover:bg-gradient-to-r 
+                group-hover:from-[#ff56f6] group-hover:via-[#b936ee] group-hover:to-[#3bace2]
+                relative overflow-hidden
+                shadow-lg
+              `}>
+             
+                <Icon className="w-16 h-16 text-white group-hover:text-white transition-colors" />
               </div>
+              <span className="font-medium text-white text-lg tracking-wide">
+                {skill.name}
+              </span>
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
+
+      
+       
+     
     </div>
   )
 }
