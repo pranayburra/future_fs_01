@@ -38,7 +38,9 @@ function App() {
         <div className="rgb-ball"></div>
       </div>
       <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
-        <RouterProvider router={router}/>
+        <RouterProvider router={router} future={{
+    v7_startTransition: true,
+  }}/>
       </Suspense>
     </div>
   )

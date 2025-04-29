@@ -2,7 +2,9 @@ import React from 'react'
 import github from '../assets/github.svg'
 import linkedin from '../assets/linkedin.svg'
 import gmail from '../assets/gmail.svg'
+import { useNavigate } from 'react-router-dom'
 const Home = () => {
+  const navigate = useNavigate()
   return (
     <div className='flex flex-col sm:flex-row justify-around items-center h-[calc(100vh-20vh)] px-4 sm:px-0'>
       <div className='flex flex-col gap-2 sm:gap-4 justify-center items-center sm:items-start'>
@@ -24,7 +26,7 @@ const Home = () => {
                 </div>
         <div className='flex flex-row gap-4 mt-4 sm:mt-0'>
           <button className='bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors'>Download CV</button>
-          <button className='bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors'>Contact Me</button>
+          <button className='bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors' onClick={() => navigate('/contact')}>Contact Me</button>
           <div className='flex items-center'>
             <a 
               href="https://github.com/pranayburra" 
